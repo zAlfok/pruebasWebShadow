@@ -19,7 +19,7 @@
        </div>
     `;
   
-    const shadowRoot = this.attachShadow({ mode: "closed" });
+    const shadowRoot = this.attachShadow({ mode: "open" });
     shadowRoot.appendChild(containerTemplate.content.cloneNode(true));
   }
 }
