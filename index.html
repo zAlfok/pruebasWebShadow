@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   class ContainerComponent extends HTMLElement {
+  constructor() {
+    super();
+
+    const containerTemplate = document.createElement("template");
+    containerTemplate.innerHTML = `
+       <slot></slot>
+       <div>This is what I want</div>
+    `;
+  
+    const shadowRoot = this.attachShadow({ mode: "closed" });
+    shadowRoot.appendChild(containerTemplate.content.cloneNode(true));
+  }
+}
+
+customElements.define("layout-container", ContainerComponent);
+  </script>
+
+  <layout-container>
+  </layout-container>
+</body>
+</html>
