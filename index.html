@@ -14,7 +14,9 @@
     const containerTemplate = document.createElement("template");
     containerTemplate.innerHTML = `
        <slot></slot>
-       <div>This is what I want</div>
+       <div>
+         <div><span>This is what I want</span></div>
+       </div>
     `;
   
     const shadowRoot = this.attachShadow({ mode: "closed" });
